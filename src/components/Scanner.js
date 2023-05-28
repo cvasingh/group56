@@ -22,7 +22,7 @@ const Scanner = () => {
   };
 
   const getScanner = () => {
-    axios.get('http://localhost:3000/api/scan')
+    axios.get('https://group56.vercel.app/api/scan')
       .then(res => res.data?.lyf && setLyf(res.data?.lyf))
       .catch(err => console.log(err))
       .finally(() => {
