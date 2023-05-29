@@ -41,7 +41,7 @@ const Scanner = () => {
       <div className="w-11/12 max-w-[400px] px-4 rounded-2xl bg-[#FFF] relative">
         <Lottie
           options={{
-            loop: false,
+            loop: true,
             autoplay: true,
             animationData: animationData,
             rendererSettings: {
@@ -54,7 +54,7 @@ const Scanner = () => {
           Details
         </div>
         <div class="flex flex-col">
-          <div class="text-center py-4 text-2xl font-semibold">
+          <div class="text-center py-4 text-2xl font-semibold text-[#202020]">
             {lyf}
           </div>
         </div>
