@@ -15,5 +15,5 @@ export async function POST(req, { params }) {
     } catch (err) {
         console.log(err);
     }
-    return Response.json({ lyf: data.lyf });
+    return new Response(JSON.stringify({ lyf: data.lyf }));
 }
