@@ -23,12 +23,9 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-
-.main {
-  width: 320px;
-  height: 480px;
-  position: relative;
-  box-shadow: 5px 5px 20px 1px #666;
+input,
+button {
+  outline: none;
 }
 
 /*form*/
@@ -41,21 +38,6 @@ body {
   color: rgba(2, 225, 139, 1.0);
 }
 
-.google_box {
-  text-align: center;
-  margin-top: -20px;
-}
-
-.btn_style {
-  margin-top: 20px;
-  font-weight: 500;
-  color: rgba(2, 225, 139, 1.0);
-}
-
-.btn-light:hover {
-  background-color: rgba(2, 225, 139, 0.9);
-  border-color: rgba(2, 225, 139, 0.5);
-}
 
 label {
   /*font-weight: bold;*/
@@ -72,11 +54,4 @@ label {
 
 .form-check-input {
   margin-top: 15px;
-}
-
-.signout {
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  z-index: 10;
 }
