@@ -24,7 +24,7 @@ const Scanner = () => {
   };
 
   const getScanner = () => {
-    axios.post(`${process.env.mongodburl}/scan`, { for: 'nextjs' })
+    axios.post(`${process.env.apiUrl}/scan`, { for: 'nextjs' })
       .then(res => res.data?.lyf && setLyf(res.data?.lyf))
       .catch(err => console.log(err))
       .finally(() => {
