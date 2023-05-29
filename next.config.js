@@ -7,7 +7,7 @@ const nextConfig = {
     },
     compiler: {
         removeConsole: {
-            exclude: ['error'],
+            exclude: ['error', 'log'],
         },
     },
 }

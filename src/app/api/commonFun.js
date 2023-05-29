@@ -1,4 +1,5 @@
 import User from "./models/users";
+import connectDB from "./mongodb";
 
 export async function getDetailsWithEmail(email) {
     await connectDB();
