@@ -7,7 +7,7 @@ export default function Home() {
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
-    axios.post('https://group56.vercel.app/api/88',
+    axios.post(`${process.env.mongodburl}/88`,
       { email, password })
       .then(res => console.log(res))
     e.preventDefault();

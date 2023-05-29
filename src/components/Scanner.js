@@ -22,7 +22,7 @@ const Scanner = () => {
   };
 
   const getScanner = () => {
-    axios.get('https://group56.vercel.app/api/scan')
+    axios.post(`${process.env.mongodburl}/scan`, { for: 'nextjs' })
       .then(res => res.data?.lyf && setLyf(res.data?.lyf))
       .catch(err => console.log(err))
       .finally(() => {

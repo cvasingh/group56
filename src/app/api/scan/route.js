@@ -1,20 +1,19 @@
 
-import { NextResponse } from 'next/server';
 import Scan from '../models/scan';
 import connectDB from '../mongodb';
 
 
-export async function GET(req, { params }) {
+
+
+export async function POST(req, { params }) {
     var data = 0
+    const body = await req.json()
     try {
         await connectDB();
-        data = await Scan.findOne({ for: 'nextjs' }, { _id: 0 });
-        await Scan.updateOne({
-            for: 'nextjs'
-        },
-            { lyf: 0 })
+        data = await Scan.findOne(body, { _id: 0 });
+        await Scan.updateOne(body, { lyf: 0 }).then((e) => console.log(e))
     } catch (err) {
         console.log(err);
     }
-    return NextResponse.json({ lyf: data.lyf });
+    return Response.json({ lyf: data.lyf });
 }
