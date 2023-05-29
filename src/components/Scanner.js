@@ -13,7 +13,7 @@ const QrReader = dynamic(
 );
 const Scanner = () => {
   const [result, setState] = useState()
-  const [lyf, setLyf] = useState()
+  const [lyf, setLyf] = useState(0)
 
   const handleScan = (data) => {
     if (data) {
@@ -28,11 +28,7 @@ const Scanner = () => {
       .then(res => res.data?.lyf && setLyf(res.data?.lyf))
       .catch(err => console.log(err))
       .finally(() => {
-        if (lyf) {
-
-        } else {
-          setTimeout(() => getScanner(), 4000)
-        }
+        lyf === 0 && setTimeout(() => getScanner(), 4000)
       })
   };
 
@@ -72,7 +68,8 @@ const Scanner = () => {
             <path fill="none" d="M87,100 L100, 100 L100,87" stroke="rgba(255, 0, 0, 0.9)" strokeWidth="5"></path>
             <path fill="none" d="M100,13 L100,0 87,0" stroke="rgba(255, 0, 0, 0.9)" strokeWidth="5"></path>
           </svg>}
-          delay={500}
+          constraints={{ facingMode: 'environment' }}
+          delay={0}
           onError={handleScan}
           onScan={handleScan}
           style={{ width: "100%" }}
