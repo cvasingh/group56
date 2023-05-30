@@ -9,7 +9,7 @@ export default function BottomNavBar() {
             {[
                 { name: 'Home', link: '/' },
                 { name: 'Camera', link: '/scan' },
-                { name: 'Setting', link: '/update' }
+                { name: 'Setting', link: '/upload' }
             ].map((ele, i) =>
                 <NavBottom key={i} active={active === i} setActive={() => setActive(i)} ele={ele} />
             )}
